@@ -28,4 +28,3 @@ jobs:
           SOURCE: 'build'
           REMOTE_HOST: 110.40.156.234
           REMOTE_USER: ubuntu
-          TARGET: '/home/REMOTE_USER/'
