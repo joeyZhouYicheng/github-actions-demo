@@ -28,3 +28,11 @@ jobs:
           SOURCE: 'build'
           REMOTE_HOST: 110.40.156.234
           REMOTE_USER: ubuntu
+          EXCLUDE: "/dist/, /node_modules/"
+          SCRIPT_BEFORE: |
+            whoami
+            ls -al
+          SCRIPT_AFTER: |
+            whoami
+            ls -al
+            echo $RSYNC_STDOUT
