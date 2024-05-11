@@ -19,3 +19,13 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build # The folder the action should deploy.
+
+      - name: SSH Deploy
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i"
+          SOURCE: 'build'
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER}}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
